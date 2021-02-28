@@ -96,13 +96,10 @@ https://github.com/pimoroni/unicorn-hat-hd
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Start django server
+1. Start django server
 
 	```sh
    cd tour-tag
-   ```
-   
-	```sh
    python3 manage.py runserver 0:8000
    ```
 
