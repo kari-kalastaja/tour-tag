@@ -57,35 +57,54 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
+### Hardware
+
+Raspberry Pi 3 Model b
+Unicorn Hat HD Matrix LED
+https://github.com/pimoroni/unicorn-hat-hd
+
 
 ### Installation
 
-1. Get rasbian  https://www.raspberrypi.org/software/operating-systems/
+1. Get latest rasbian OS  https://www.raspberrypi.org/software/operating-systems/
 
+2. update and upgrade
 
-2. Clone the repo
+   ```sh
+   sudo apt update
+   sudo apt full-upgrade
+   ```
+4. Install django
+
+	```sh
+	sudo pip3 install Django
+	````
+
+5. Install matrix led panel
+```sh
+ curl https://get.pimoroni.com/unicornhathd | bash
+````
+
+6. Clone the repo
    ```sh
    git clone https://github.com/kari-kalastaja/tour-tag
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Start django server
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
+	```sh
+   cd tour-tag
+   ```
+   
+	```sh
+   python3 manage.py runserver 0:8000
+   ```
 
 
 <!-- LICENSE -->
