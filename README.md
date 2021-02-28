@@ -38,9 +38,8 @@ Here's why:
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Django](https://www.djangoproject.com/)
+
 
 
 
@@ -66,7 +65,7 @@ https://github.com/pimoroni/unicorn-hat-hd
 
 ### Installation
 
-1. Get latest rasbian OS  https://www.raspberrypi.org/software/operating-systems/
+1. Get latest rasberry OS  https://www.raspberrypi.org/software/operating-systems/
 
 2. update and upgrade
 
@@ -80,7 +79,8 @@ https://github.com/pimoroni/unicorn-hat-hd
 	sudo pip3 install Django
 	````
 
-5. Install matrix led panel
+5. Install matrix led panel (TODO)
+
 ```sh
  curl https://get.pimoroni.com/unicornhathd | bash
 ````
@@ -102,12 +102,6 @@ https://github.com/pimoroni/unicorn-hat-hd
    cd tour-tag
    python3 manage.py runserver 0:8000
    ```
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
