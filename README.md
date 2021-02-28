@@ -49,12 +49,12 @@ This section should list any major frameworks that you built your project using.
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Prerequisites TODO
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* npm?
   ```sh
-  npm install npm@latest -g
+  add something
   ```
 ### Hardware
 
@@ -89,8 +89,6 @@ https://github.com/pimoroni/unicorn-hat-hd
    ```sh
    git clone https://github.com/kari-kalastaja/tour-tag
    ```
-
-
 
 
 <!-- USAGE EXAMPLES -->
