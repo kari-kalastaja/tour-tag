@@ -81,20 +81,21 @@ https://github.com/pimoroni/unicorn-hat-hd
 
 4. Install matrix led panel (TODO)
 
-```sh
- curl https://get.pimoroni.com/unicornhathd | bash
-```
+  ```sh
+  curl https://get.pimoroni.com/unicornhathd | bash
+  ```
 
 5. Clone the repo
 
-```sh
-git clone https://github.com/kari-kalastaja/tour-tag
-```
+  ```sh
+  git clone https://github.com/kari-kalastaja/tour-tag
+  ```
 6. Set wifi accespoint
-```sh
-cd tour-tag
-sudo ./set_wifi_ap
- ```
+
+  ```sh
+  cd tour-tag
+  sudo ./set_wifi_ap
+  ```
 
 7. Reboot
 
@@ -105,8 +106,8 @@ sudo ./set_wifi_ap
 
 	```sh
   cd tour-tag
-   python3 manage.py runserver 0:8000
-   ```
+  python3 manage.py runserver 0:8000
+  ```
 
 2. Connect to wifi accesspoint
 
