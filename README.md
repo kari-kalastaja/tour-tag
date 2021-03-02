@@ -77,7 +77,7 @@ https://github.com/pimoroni/unicorn-hat-hd
 
 	```sh
 	sudo pip3 install Django
-	````
+	```
 
 4. Install matrix led panel (TODO)
 
@@ -104,10 +104,10 @@ https://github.com/pimoroni/unicorn-hat-hd
 
 1. Start django server
 
-	```sh
-  cd tour-tag
-  python3 manage.py runserver 0:8000
-  ```
+```sh
+cd tour-tag
+python3 manage.py runserver 0:8000
+```
 
 2. Connect to wifi accesspoint
 
