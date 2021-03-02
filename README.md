@@ -73,23 +73,30 @@ https://github.com/pimoroni/unicorn-hat-hd
    sudo apt update
    sudo apt full-upgrade
    ```
-4. Install django
+3. Install django
 
 	```sh
 	sudo pip3 install Django
 	````
 
-5. Install matrix led panel (TODO)
+4. Install matrix led panel (TODO)
 
 ```sh
  curl https://get.pimoroni.com/unicornhathd | bash
-````
+```
 
-6. Clone the repo
-   ```sh
-   git clone https://github.com/kari-kalastaja/tour-tag
-   ```
+5. Clone the repo
 
+```sh
+git clone https://github.com/kari-kalastaja/tour-tag
+```
+6. Set wifi accespoint
+```sh
+cd tour-tag
+sudo ./set_wifi_ap
+ ```
+
+7. Reboot
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -97,11 +104,14 @@ https://github.com/pimoroni/unicorn-hat-hd
 1. Start django server
 
 	```sh
-   cd tour-tag
+  cd tour-tag
    python3 manage.py runserver 0:8000
    ```
 
+2. Connect to wifi accesspoint
 
+ap name: tourtag
+password: tourtag
 
 <!-- CONTACT -->
 ## Contact
