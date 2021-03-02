@@ -90,12 +90,15 @@ https://github.com/pimoroni/unicorn-hat-hd
   ```sh
   git clone https://github.com/kari-kalastaja/tour-tag
   ```
-6. Set wifi accespoint
+6. Set wifi accespoint https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/183-raspberry-pi-automatic-hotspot-and-static-hotspot-installer
 
   ```sh
-  cd tour-tag
-  sudo ./set_wifi_ap
+  curl "https://www.raspberryconnect.com/images/hsinstaller/AutoHotspot-Setup.tar.gz" -o AutoHotspot-Setup.tar.gz
+  tar -xzvf AutoHotspot-Setup.tar.gz
+  cd Autohotspot
+  sudo ./autohotspot-setup.sh
   ```
+  Choose option 3
 
 7. Reboot
 
