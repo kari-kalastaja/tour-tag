@@ -100,7 +100,7 @@ https://github.com/pimoroni/unicorn-hat-hd
 7. Reboot
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage test
 
 1. Start django server
 
