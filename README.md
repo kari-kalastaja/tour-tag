@@ -67,6 +67,8 @@ https://github.com/pimoroni/unicorn-hat-hd
 
 1. Get latest rasberry OS  https://www.raspberrypi.org/software/operating-systems/
 
+In addition you can enable SSH to control your Raspberry pi remotely. Instructions for enabling SSH can be found here https://www.raspberrypi.org/documentation/remote-access/ssh/.
+
 2. update and upgrade
 
    ```sh
