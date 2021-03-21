@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 # Create your views here.
 def home(request):
@@ -7,5 +8,9 @@ def home(request):
 def login(request):
     return render(request, 'login.html')
 
-#def admin(request):
-#    return render(request)
+def logout(request):
+    logout(request)
+    return redirect('home')
+
+def addDestination(request):
+    return render(request, 'addDestination.html')
