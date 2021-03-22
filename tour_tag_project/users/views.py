@@ -10,7 +10,6 @@ def home(request):
 
     dests = Destination.objects.all()
     overtime = 0
-    
     #led = Led()
     return render(request, 'home.html',{'dests': dests, 'overtime':overtime})
     #return render(request, 'home.html')
@@ -21,9 +20,6 @@ def login(request):
 def logout(request):
     logout(request)
     return redirect('home')
-
-#def addDestination(request):
-#    return render(request, 'addDestination.html')
 
 def addDestination(request):
     #return render(request, 'addDestination.html')
