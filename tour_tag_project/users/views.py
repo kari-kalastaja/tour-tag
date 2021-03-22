@@ -21,9 +21,6 @@ def logout(request):
     logout(request)
     return redirect('home')
 
-#def addDestination(request):
-#    return render(request, 'addDestination.html')
-
 def addDestination(request):
     #return render(request, 'addDestination.html')
     print('in add destination')
