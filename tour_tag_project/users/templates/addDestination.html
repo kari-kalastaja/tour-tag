@@ -1,15 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>add destination page</h1> 
+
+
+    <h1>Add destination</h1> 
 
         <form action="" method="post">
-        {% csrf_token %}
+            {% csrf_token %}
 
-        <input type="text" name="destination" placeholder="destination"><br>
-        <input type="text" name="arrive_time" placeholder="arrive time"><br>
-        <input type="Submit">
+            <input type="text" name="destination" placeholder="destination"><br>
+            <input type="text" name="arrive_time" placeholder="arrive time"><br>
+        
+            <input type="Submit" name="add_items">
+        </form>
+    <br>
+    <h2> Destinations </h2>
 
-    </form>
+    {% for dest in dests %}
+         <form method="POST">
+            {% csrf_token %}
+            <b>destination:</b><p> {{dest.destination}}</p> <b>arrival time:</b> <p>{{dest.arrive_time}}<p>
+            <button type="Submit" name="delete_items" value="{{ dest.pk }}">delete</button>
+        </form>
+
+    {% endfor %}
 
 
 {% endblock content %}
