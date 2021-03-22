@@ -21,7 +21,7 @@ class Led:
         if self.thread != None:
             self.on = False
             self.thread.join()
-            self.on = True;
+            self.on = True
             self.thread = threading.Thread(target=self.led_on, args=(lines, text_colour, back_colour, arrival_time))
             self.thread.start()
         else:
