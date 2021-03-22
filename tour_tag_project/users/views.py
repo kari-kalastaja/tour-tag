@@ -7,8 +7,12 @@ from .models import DateForm
 
 # Create your views here.
 def home(request):
+
+    dests = Destination.objects.all()
+    overtime = 0
     #led = Led()
-    return render(request, 'home.html')
+    return render(request, 'home.html',{'dests': dests, 'overtime':overtime})
+    #return render(request, 'home.html')
 
 def login(request):
     return render(request, 'login.html')

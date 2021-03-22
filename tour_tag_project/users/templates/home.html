@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>home page</h1> 
+    <h3>Current destinations</h3> 
+
+    {% for dest in dests %}
+        <form method="POST">
+        {% csrf_token %}
+        <p style="font-size:125%">{{dest.arrive_time}} + {{overtime}} min {{dest.destination}} </p>
+        <!-- <b>destination:</b><p> {{dest.destination}}</p> <b>arrival time:</b> <p>{{dest.arrive_time}}<p> -->
+        </form>
+    {% endfor %}
 {% endblock content %}
 
