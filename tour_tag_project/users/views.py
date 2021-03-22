@@ -10,6 +10,7 @@ def home(request):
 
     dests = Destination.objects.all()
     overtime = 0
+    
     #led = Led()
     return render(request, 'home.html',{'dests': dests, 'overtime':overtime})
     #return render(request, 'home.html')
