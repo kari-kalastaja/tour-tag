@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import Destination
+#from .led import Led
 
 from .models import DateForm
 
 # Create your views here.
 def home(request):
+    #led = Led()
     return render(request, 'home.html')
 
 def login(request):
