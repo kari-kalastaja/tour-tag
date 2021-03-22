@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>add destination page</h1> 
+
+        <form action="" method="post">
+        {% csrf_token %}
+
+        <input type="text" name="destination" placeholder="destination"><br>
+        <input type="text" name="arrive_time" placeholder="arrive time"><br>
+        <input type="Submit">
+
+    </form>
+
+
 {% endblock content %}
 
