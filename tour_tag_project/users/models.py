@@ -7,12 +7,13 @@ class Destination(models.Model):
     arrive_time = models.CharField(max_length=100)
 
 
-class DateForm(forms.Form):
-    date = forms.DateTimeField(
-        input_formats=['%d/%m/%Y %H:%M'],
-        widget=forms.DateTimeInput(attrs={
-            'class': 'form-control datetimepicker-input',
-            'data-target': '#datetimepicker1'
-        })
-    )
+class Cities(models.Model):
+    city = models.CharField(max_length=100)
+    city_can_go1 = models.CharField(max_length=100)
+    city_can_go2 = models.CharField(max_length=100, blank=True, null=True)
+
+class Routes(models.Model):
+    departure = models.CharField(max_length=100)
+    destination = models.CharField(max_length=100)
+    arrivetime = models.TimeField(auto_now=False, auto_now_add=False,blank=True, null=True)
 

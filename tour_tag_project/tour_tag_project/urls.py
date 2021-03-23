@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import views
+from users.views import get_topics_ajax
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     #path('logout/', views.logout, name='logout'),
     path('addDestination/', views.addDestination, name='addDestination'),
+    path('get_topics_ajax', get_topics_ajax, name="get_topics_ajax")
 ]
