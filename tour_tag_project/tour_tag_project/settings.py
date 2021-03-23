@@ -126,3 +126,4 @@ STATIC_URL = '/static/'
 # config/settings.py
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
