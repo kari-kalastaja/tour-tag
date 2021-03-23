@@ -11,6 +11,7 @@ class Cities(models.Model):
     city = models.CharField(max_length=100)
     city_can_go1 = models.CharField(max_length=100)
     city_can_go2 = models.CharField(max_length=100, blank=True, null=True)
+    city_can_go3 = models.CharField(max_length=100, blank=True, null=True)
 
 class Routes(models.Model):
     departure = models.CharField(max_length=100)
