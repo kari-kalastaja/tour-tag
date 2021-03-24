@@ -8,6 +8,7 @@ from django.views.generic.edit import CreateView
 import json
 from datetime import datetime
 from datetime import time
+from datetime import timedelta
 #from .led import Led
 
 
@@ -17,26 +18,48 @@ def home(request):
     dests = Destination.objects.all()
     timer = Timer.objects.all()
     overtime = 0
+    currentTime = datetime.now() + timedelta(hours=2)
+    currentTime = currentTime.strftime('%H:%M:%S')
+    tf = '%Y-%m-%d %H:%M'
     #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
 
     if request.method == 'POST':
-        tf = '%Y-%m-%d %H:%M'
-        if 'start' in request.POST:
-            #timer = Timer(savedTime = datetime.utcnow(), id='0')
-            timer = Timer(savedTime = datetime.utcnow().strftime(tf), id='0')
+        #tf = '%H:%M:%S'
+        if 'late' in request.POST:
+            timer = Timer.objects.get(id='0')
+            overtime = 0
+            timer = Timer(savedTime = datetime.utcnow().strftime(tf), currentOverTime = overtime, id='0')
             print(datetime.utcnow().strftime(tf))
             timer.save()
-        if 'arrive' in request.POST:
-            print("krk")
-            
-        timer = Timer.objects.get(id='0')
-        oldTime = datetime.strptime(timer.savedTime, tf)
-        overtime = datetime.utcnow() - oldTime
-        #print(overtime.total_seconds()/60)
-        overtime = int(overtime.total_seconds()/60)
+            '''
+        if 'arrived' in request.POST:
+            timer = Timer.objects.get(id='0')
+            oldTime = timer.savedTime
+            oldTimeD = datetime.strptime(oldTime, tf)
+            overtime = datetime.utcnow() - oldTimeD
+            overtime = int(overtime.total_seconds()/60)
+            timer = Timer(savedTime = timer.savedTime, currentOverTime = overtime , id='0')
+            timer.save()
+            '''
+
+    '''
+    timer = Timer.objects.get(id='0')
+    oldTime = datetime.strptime(timer.savedTime, tf)
+    overtime = datetime.utcnow() - oldTime
+    overtime = int(overtime.total_seconds()/60)
+    print(overtime)
+    '''
+    timer = Timer.objects.get(id='0')
+    overtime = timer.currentOverTime
+    keepDateTime = timer.savedTime
+    timer = Timer(savedTime = keepDateTime, currentOverTime = overtime , id='0')
+    timer.save()
+    keepDateTime = datetime.strptime(keepDateTime, tf)
+    overtime = datetime.utcnow() - keepDateTime
+    overtime = int(overtime.total_seconds()/60)
 
     #led = Led()
-    return render(request, 'home.html',{'dests': dests, 'overtime':overtime})
+    return render(request, 'home.html',{'dests': dests, 'overtime':overtime, 'currentTime':currentTime})
     #return render(request, 'home.html')
 
 def login(request):
@@ -149,3 +172,14 @@ def get_topics_ajax(request):
             data['error_message'] = 'error'
             return JsonResponse(data)
         return JsonResponse(lista, safe = False) 
+
+def updateLateText(request): # not used
+    tf = '%Y-%m-%d %H:%M'
+    if request.is_ajax() and request.method == 'GET':
+        timer = Timer.objects.all()
+        timer = Timer.objects.get(id='0')
+        oldTime = datetime.strptime(timer.savedTime, tf)
+        overtime = datetime.utcnow() - oldTime
+        overtime = int(overtime.total_seconds()/60)
+
+    return JsonResponse(overtime, safe = False)
