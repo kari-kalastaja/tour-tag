@@ -1,8 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h2>Modify group information</h2>
+
+<br>
+
+<h5>Current information</h5>
 
 
+
+                <div class="col">
+                    <b>group id:</b> {{group.group_id}}
+                </div>
+                <div class="col">
+                    <b>leader name:</b> {{group.group_leader}}
+                </div>
+                <div class="col">
+                    <b>phone number:</b> {{group.phone_number}}
+                </div>
+
+<br>
+<br>
+
+<h5>Modify information</h5>
+
+<form method="POST">
+
+{% csrf_token %}
+
+    <div class="input-group mb-3">
+    <input type="text" name="groupid" class="form-control" id="formGroupExampleInput" placeholder="Group id">
+    <span class="input-group-text"></span>
+    <input type="text" name="leadername"class="form-control" id="formGroupExampleInput2" placeholder="Leader name">
+    </div>
+
+    <div class="input-group mb-3">
+    <input type="text" name="number" class="form-control" id="formGroupExampleInput" placeholder="phone number">
+    </div>
+
+    <button type="submit" name="update_group" class="btn btn-primary">Submit</button>
+
+</form>
 
 {% endblock content %}
 

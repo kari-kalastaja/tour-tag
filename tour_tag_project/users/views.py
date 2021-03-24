@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Destination, Cities, Routes, Timer
+from .models import Destination, Cities, Routes, Timer, Group
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
@@ -158,6 +158,25 @@ def get_topics_ajax(request):
 
 def group(request):
 
+    group = Group.objects.get(id='1')
 
 
-    return render(request, 'group.html')
+    if request.method == "POST":
+
+        if 'update_group' in request.POST:
+
+            product = Group.objects.get(id='1')
+            product.group_id = request.POST['groupid']
+            product.group_leader = request.POST['leadername']
+            product.phone_number = request.POST['number']
+   
+            product.save()
+            #print("group id after save")
+            #print(product.group_id)
+
+            #update group to latest
+            group = Group.objects.get(id='1')
+
+
+
+    return render(request, 'group.html',{'group': group})
