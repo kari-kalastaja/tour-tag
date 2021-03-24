@@ -6,6 +6,8 @@ class Destination(models.Model):
     destination = models.CharField(max_length=100)
     arrive_time = models.CharField(max_length=100)
 
+class Timer(models.Model):
+    savedTime = models.TimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
 class Cities(models.Model):
     city = models.CharField(max_length=100)
