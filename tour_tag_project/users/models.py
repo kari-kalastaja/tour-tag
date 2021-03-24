@@ -21,3 +21,10 @@ class Routes(models.Model):
     destination = models.CharField(max_length=100)
     arrivetime = models.TimeField(auto_now=False, auto_now_add=False,blank=True, null=True)
 
+class Group(models.Model):
+
+    group_id = models.IntegerField()
+    group_leader = models.CharField(max_length=100)
+    phone_number = models.IntegerField()
+
+

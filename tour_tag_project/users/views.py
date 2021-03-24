@@ -63,7 +63,8 @@ def addDestination(request):
             #print(request)
             departure = request.POST['city_id']
             destination = request.POST['city_id2']
-            date = request.POST['date']
+            #date = request.POST['date']
+            date = None
         
             route = Routes(departure = departure, destination = destination, arrivetime = date)
             route.save()
@@ -140,7 +141,10 @@ def get_topics_ajax(request):
             lista["name"].append(topics.city_can_go1)
 
             if(topics.city_can_go2 != None):
-                 lista["name"].append(topics.city_can_go2)
+                lista["name"].append(topics.city_can_go2)
+
+            if(topics.city_can_go3 != None):
+                lista["name"].append(topics.city_can_go3)
 
             print("lista")
             print(lista)
@@ -149,3 +153,11 @@ def get_topics_ajax(request):
             data['error_message'] = 'error'
             return JsonResponse(data)
         return JsonResponse(lista, safe = False) 
+
+
+
+def group(request):
+
+
+
+    return render(request, 'group.html')
