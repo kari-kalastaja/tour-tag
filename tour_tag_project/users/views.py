@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Destination, Cities, Routes
+from .models import Destination, Cities, Routes, Timer
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
 from django.views.generic.edit import CreateView
 import json
+from datetime import datetime
+from datetime import time
 #from .led import Led
 
 
@@ -13,7 +15,26 @@ import json
 def home(request):
 
     dests = Destination.objects.all()
+    timer = Timer.objects.all()
     overtime = 0
+    #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
+
+    if request.method == 'POST':
+        tf = '%Y-%m-%d %H:%M'
+        if 'start' in request.POST:
+            #timer = Timer(savedTime = datetime.utcnow(), id='0')
+            timer = Timer(savedTime = datetime.utcnow().strftime(tf), id='0')
+            print(datetime.utcnow().strftime(tf))
+            timer.save()
+        if 'arrive' in request.POST:
+            print("krk")
+            
+        timer = Timer.objects.get(id='0')
+        oldTime = datetime.strptime(timer.savedTime, tf)
+        overtime = datetime.utcnow() - oldTime
+        #print(overtime.total_seconds()/60)
+        overtime = int(overtime.total_seconds()/60)
+
     #led = Led()
     return render(request, 'home.html',{'dests': dests, 'overtime':overtime})
     #return render(request, 'home.html')
