@@ -36,6 +36,11 @@ User will be able to connect to the tour-tag WIFI access point by phone or lapto
 
 * [Django](https://www.djangoproject.com/)
 
+### Hardware
+
+Raspberry Pi 3 Model b
+Unicorn Hat HD Matrix LED
+https://github.com/pimoroni/unicorn-hat-hd
 
 <!-- GETTING STARTED -->
 ## 2 Getting Started
@@ -43,12 +48,6 @@ User will be able to connect to the tour-tag WIFI access point by phone or lapto
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-
-### Hardware
-
-Raspberry Pi 3 Model b
-Unicorn Hat HD Matrix LED
-https://github.com/pimoroni/unicorn-hat-hd
 
 
 ### Installation
@@ -69,7 +68,7 @@ In addition you can enable SSH to control your Raspberry pi remotely. Instructio
 	sudo pip3 install Django
 	```
 
-4. Install matrix led panel (TODO)
+4. Install matrix led panel
 
   ```sh
   curl https://get.pimoroni.com/unicornhathd | bash
