@@ -58,7 +58,7 @@ def home(request):
         print("empty")
 
     #led = Led()
-    return render(request, 'home.html',{'dests': dests, 'overtime':overtime, 'currentTime':currentTime})
+    return render(request, 'home.html',{'dests': dests, 'overtime':overtime, 'currentTime':currentTime, 'groupID':group.group_id, 'groupLeader':group.group_leader, 'phoneNumber':group.phone_number})
     #return render(request, 'home.html')
 
 def login(request):
