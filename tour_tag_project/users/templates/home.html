@@ -5,8 +5,10 @@
     <p style="font-size:125%">Current time: {{currentTime}} + {{overtime}} min late </p> 
     <form method="POST">
         {% csrf_token %}
-        <button type="Submit" name="late" style="height:37px;width:65px" class="btn btn-danger" value="{{ late }}">late</button>
-        <button type="Submit" name="stop" style="height:37px;width:65px" class="btn btn-danger" value="{{ stop }}">Stop</button>
+        {% if user.is_authenticated %}
+            <button type="Submit" name="late" style="height:37px;width:65px" class="btn btn-danger" value="{{ late }}">late</button>
+            <button type="Submit" name="stop" style="height:37px;width:65px" class="btn btn-danger" value="{{ stop }}">Stop</button>
+        {% endif %}
         <!-- <button type="Submit" name="arrived" style="height:37px;width:65px" class="btn btn-danger" value="{{ arrived }}">arrived</button> -->
     </form>
     {% for dest in dests %}
