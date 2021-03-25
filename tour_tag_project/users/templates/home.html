@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3>Current destinations</h3> 
+    <h3>Current destinations for group {{groupID}}</h3> 
+    <h5>Group leader: {{groupLeader}}, Phone number: {{phoneNumber}} </h5>
     <p style="font-size:125%">Current time: {{currentTime}} + {{overtime}} min late </p> 
     <form method="POST">
         {% csrf_token %}
