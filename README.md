@@ -6,7 +6,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#software">Built With</a></li>
+        <li><a href="#harware">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -24,7 +25,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## 1 About The Project
+## 1. About The Project
 
 Tour tag project is webserver running on raspberry pi and is powered by django framework. 
 The main objectives of this project are to provide a system for every tour leader to gather statistical information, control rules, provide some guidance, and help tourists to make trips better.
@@ -32,18 +33,19 @@ The main objectives of this project are to provide a system for every tour leade
 User will be able to connect to the tour-tag WIFI access point by phone or laptop. Tour-tag will provide website service where user can see information about the trip. From website user can view estimated time of departure/arrival.
 
 
-### Built With
+### Software
 
-* [Django](https://www.djangoproject.com/)
+[Django](https://www.djangoproject.com/)
 
 ### Hardware
 
 Raspberry Pi 3 Model b
+https://www.raspberrypi.org/
 Unicorn Hat HD Matrix LED
 https://github.com/pimoroni/unicorn-hat-hd
 
 <!-- GETTING STARTED -->
-## 2 Getting Started
+## 2. Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -92,7 +94,7 @@ In addition you can enable SSH to control your Raspberry pi remotely. Instructio
 7. Reboot
 
 <!-- USAGE EXAMPLES -->
-## 3 Usage 
+## 3. Usage 
 
 1. Start django server
 
