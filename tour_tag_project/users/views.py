@@ -87,6 +87,8 @@ def addDestination(request):
             departure = request.POST['city_id']
             destination = request.POST['city_id2']
             date = request.POST['date']
+            print(request.POST['date'])
+            #date = None
         
             route = Routes(departure = departure, destination = destination, arrivetime = date)
             route.save()

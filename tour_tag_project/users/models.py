@@ -20,7 +20,7 @@ class Cities(models.Model):
 class Routes(models.Model):
     departure = models.CharField(max_length=100)
     destination = models.CharField(max_length=100)
-    arrivetime = models.TimeField(auto_now=False, auto_now_add=False,blank=True, null=True)
+    arrivetime = models.CharField(max_length=100, blank=True, null=True)
 
 class Group(models.Model):
 
