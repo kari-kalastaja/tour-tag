@@ -16,7 +16,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
+ 
 
   </ol>
 </details>
@@ -24,7 +24,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 1 About The Project
 
 Tour tag project is webserver running on raspberry pi and is powered by django framework. 
 The main objectives of this project are to provide a system for every tour leader to gather statistical information, control rules, provide some guidance, and help tourists to make trips better.
@@ -38,7 +38,7 @@ User will be able to connect to the tour-tag WIFI access point by phone or lapto
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## 2 Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -93,7 +93,7 @@ In addition you can enable SSH to control your Raspberry pi remotely. Instructio
 7. Reboot
 
 <!-- USAGE EXAMPLES -->
-## Usage test
+## 3 Usage 
 
 1. Start django server
 
