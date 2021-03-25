@@ -9,8 +9,10 @@ import json
 from datetime import datetime
 from datetime import time
 from datetime import timedelta
-#from .led import Led
+from .led import Led
 
+
+led = Led()
 
 # Create your views here.
 def home(request):
@@ -22,7 +24,7 @@ def home(request):
     currentTime = currentTime.strftime('%H:%M:%S')
     tf = '%Y-%m-%d %H:%M'
     #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
-
+    led.show(["testi"], (255,0,0), (0,0,0))
     if request.method == 'POST':
         #tf = '%H:%M:%S'
         if 'late' in request.POST:
