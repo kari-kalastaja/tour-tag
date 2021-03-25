@@ -9,7 +9,7 @@ import json
 from datetime import datetime
 from datetime import time
 from datetime import timedelta
-#from .led import Led
+from .led import Led
 
 
 led = Led()
@@ -17,7 +17,7 @@ led = Led()
 # Create your views here.
 def home(request):
 
-    dests = Destination.objects.all()
+    dests = Routes.objects.all()
     timer = Timer.objects.all()
 
     group = Group.objects.get(id='1')
@@ -27,11 +27,11 @@ def home(request):
     currentTime = datetime.now() + timedelta(hours=2)
     currentTime = currentTime.strftime('%H:%M:%S')
     tf = '%Y-%m-%d %H:%M'
-    #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
+
     led.show([groupID], (255,0,0), (0,0,0))
     print(groupID)
     if request.method == 'POST':
-        #tf = '%H:%M:%S'
+
         if 'late' in request.POST:
             timer = Timer.objects.get(id='0')
             overtime = 0
@@ -56,10 +56,7 @@ def home(request):
     else:
         overtime = 0
         print("empty")
-
-    #led = Led()
     return render(request, 'home.html',{'dests': dests, 'overtime':overtime, 'currentTime':currentTime, 'groupID':group.group_id, 'groupLeader':group.group_leader, 'phoneNumber':group.phone_number})
-    #return render(request, 'home.html')
 
 def login(request):
     return render(request, 'login.html')
@@ -71,8 +68,6 @@ def logout(request):
 def addDestination(request):
 
     routes = Routes.objects.all()
-
-    #return render(request, 'addDestination.html')
     print('in add destination')
 
     if request.method == 'POST':

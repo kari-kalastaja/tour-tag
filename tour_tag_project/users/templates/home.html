@@ -14,7 +14,7 @@
     {% for dest in dests %}
         <form method="POST">
         {% csrf_token %}
-        <p style="font-size:125%">{{dest.arrive_time}} {{dest.destination}} 
+        <p style="font-size:125%">{{dest.arrivetime}} {{dest.destination}} 
             <!-- <button type="Submit" name="start" style="height:37px;width:65px" class="btn btn-danger" value="{{ start }}">Start</button>
             <button type="Submit" name="arrive" style="height:37px;width:65px" class="btn btn-danger" value="{{ arrive }}">arrive</button> -->
         </p>
