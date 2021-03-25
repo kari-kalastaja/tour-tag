@@ -145,7 +145,30 @@ def addDestination(request):
         return render(request, 'addDestination.html',{'dests': dests})
 
         '''
+def group(request):
 
+    group = Group.objects.get(id='1')
+
+
+    if request.method == "POST":
+
+        if 'update_group' in request.POST:
+
+            product = Group.objects.get(id='1')
+            product.group_id = request.POST['groupid']
+            product.group_leader = request.POST['leadername']
+            product.phone_number = request.POST['number']
+
+            product.save()
+            #print("group id after save")
+            #print(product.group_id)
+
+            #update group to latest
+            group = Group.objects.get(id='1')
+
+
+
+    return render(request, 'group.html',{'group': group}) 
 
 def get_topics_ajax(request):
 
