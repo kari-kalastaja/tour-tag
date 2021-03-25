@@ -92,7 +92,7 @@ class Led:
             self.thread.join()
             self.thread = None
         
-try:
+'''try:
     led = Led()
     led.show(["hellurei"], (0, 255, 0), (0,0,0), 50)
     time.sleep(5)
@@ -100,5 +100,5 @@ try:
     time.sleep(5)
     led.led_off()
 except KeyboardInterrupt:
-    unicornhathd.off()
+    unicornhathd.off()'''
 

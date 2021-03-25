@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Destination, Cities, Routes, Timer
+from .models import Destination, Cities, Routes, Timer, Group
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
@@ -9,8 +9,10 @@ import json
 from datetime import datetime
 from datetime import time
 from datetime import timedelta
-#from .led import Led
+from .led import Led
 
+
+led = Led()
 
 # Create your views here.
 def home(request):
@@ -22,7 +24,7 @@ def home(request):
     currentTime = currentTime.strftime('%H:%M:%S')
     tf = '%Y-%m-%d %H:%M'
     #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
-
+    led.show(["testi"], (255,0,0), (0,0,0))
     if request.method == 'POST':
         #tf = '%H:%M:%S'
         if 'late' in request.POST:
@@ -87,6 +89,8 @@ def addDestination(request):
             departure = request.POST['city_id']
             destination = request.POST['city_id2']
             date = request.POST['date']
+            print(request.POST['date'])
+            #date = None
         
             route = Routes(departure = departure, destination = destination, arrivetime = date)
             route.save()

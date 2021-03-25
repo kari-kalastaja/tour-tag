@@ -54,30 +54,12 @@
 
          </div>
 
+    <div class="col">
 
-        <div class="col">
-  
-                    <label for="inputStatus">Arrive time</label>
-                        <div class="input-group date" id="datetimepicker14" data-target-input="nearest">
-                            <input type="text" name="date" class="form-control datetimepicker-input" data-target="#datetimepicker14"/>
-                            <div class="input-group-append" data-target="#datetimepicker14" data-toggle="datetimepicker">
-                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                            </div>
-                        </div>
-                    
-             
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker14').datetimepicker({
-                            allowMultidate: true,
-                            multidateSeparator: ','
-                        });
-                    });
-                        </script>
-  
-
-        </div>
+        <label for="inputMDEx1">Arrival time</label>
+        <input type="time" name='date' id="inputMDEx1" class="form-control">
         
+    </div>
 
     <div class="col">
          <input type="submit" name="submit" class="btn btn-primary">
@@ -131,6 +113,12 @@
                 <div class="col">
                     <b>destination:</b> {{route.destination}}
                 </div>
+
+                <div class="col">
+                    <b>arrival time:</b> {{route.arrivetime}}
+                </div>
+
+       
                 <div class="col">
                      <button type="Submit" name="delete_items"  class="btn btn-danger" value="{{ route.pk }}">delete</button>
                 </div>

@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     #path('logout/', views.logout, name='logout'),
     path('addDestination/', views.addDestination, name='addDestination'),
+    path('group/', views.group, name='group'),
     path('get_topics_ajax', get_topics_ajax, name="get_topics_ajax")
 ]
