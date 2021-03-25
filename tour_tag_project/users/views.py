@@ -12,7 +12,7 @@ from datetime import timedelta
 #from .led import Led
 
 
-#led = Led()
+led = Led()
 
 # Create your views here.
 def home(request):
@@ -28,7 +28,7 @@ def home(request):
     currentTime = currentTime.strftime('%H:%M:%S')
     tf = '%Y-%m-%d %H:%M'
     #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
-    #led.show([groupID], (255,0,0), (0,0,0))
+    led.show([groupID], (255,0,0), (0,0,0))
     print(groupID)
     if request.method == 'POST':
         #tf = '%H:%M:%S'
