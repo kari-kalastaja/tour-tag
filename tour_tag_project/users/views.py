@@ -9,10 +9,10 @@ import json
 from datetime import datetime
 from datetime import time
 from datetime import timedelta
-from .led import Led
+#from .led import Led
 
 
-led = Led()
+#led = Led()
 
 # Create your views here.
 def home(request):
@@ -28,7 +28,7 @@ def home(request):
     currentTime = currentTime.strftime('%H:%M:%S')
     tf = '%Y-%m-%d %H:%M'
     #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
-    led.show([groupID], (255,0,0), (0,0,0))
+    #led.show([groupID], (255,0,0), (0,0,0))
     print(groupID)
     if request.method == 'POST':
         #tf = '%H:%M:%S'
@@ -101,6 +101,25 @@ def addDestination(request):
             print(items_to_delete)
             # Delete those items all in one go
             Routes.objects.filter(pk__in=items_to_delete).delete()
+
+        if 'edit' in request.POST:
+            print(list(request.POST.items()))
+            #print(request.POST[''])
+            print(request.POST['date'])
+            print(request.POST['edit'])
+
+            edit = Routes.objects.get(pk=request.POST['edit'])
+            edit.arrivetime = request.POST['date']
+            edit.save()
+
+
+            # product = Group.objects.get(id='1')
+            #product.group_id = request.POST['groupid']
+            #product.group_leader = request.POST['leadername']
+            #product.phone_number = request.POST['number']
+
+            #product.save()
+            
 
             #return render(request, 'addDestination.html',{'dests': dests})
 

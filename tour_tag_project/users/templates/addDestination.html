@@ -122,7 +122,64 @@
                 <div class="col">
                      <button type="Submit" name="delete_items"  class="btn btn-danger" value="{{ route.pk }}">delete</button>
                 </div>
+
+                <div class="col">
+
+                <button type="button" id="myBtn{{route.pk}}" value="{{route.pk}}" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{route.pk}}">
+                    edit
+                </button>
+               
+                </div>
+
+
+                 <div class="modal fade" id="myModal{{route.pk}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">edit data</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        
+                                    <b>departure:</b> {{route.departure}}
+
+                                    <b>destination:</b> {{route.destination}}
+                                    <b>arrival time:</b> {{route.arrivetime}}
+
+                                    <form <form method="POST">
+                                    <br>
+                                    <label for="inputMDEx1">Change arrival time</label>
+                                    <input type="time" name='date' id="inputMDEx1" class="form-control">
+
+
+                                   
+                           
+                            <!--{% for j in routes %}
+                                {% if route.pk == j.pk %}
+                                    <b>destination:</b> {{j.destination}}
+                                    <b>arrival time:</b> {{j.arrivetime}}
+                                {% endif %}
+                            {% endfor %}
+                            -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" name='edit' value = '{{route.pk}}'>Save changes</button>
+                                    </div>
+
+                                     </form>
+                            </div>
+                    </div>
+                    </div>
+                    
+
+
                 <br><br>
+
+
+ 
   
         </form>
 
