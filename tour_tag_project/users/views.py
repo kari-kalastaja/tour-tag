@@ -19,12 +19,17 @@ def home(request):
 
     dests = Destination.objects.all()
     timer = Timer.objects.all()
+
+    group = Group.objects.get(id='1')
+    groupID = str(group.group_id)
+
     overtime = 0
     currentTime = datetime.now() + timedelta(hours=2)
     currentTime = currentTime.strftime('%H:%M:%S')
     tf = '%Y-%m-%d %H:%M'
     #print(datetime.utcnow().strftime('%Y%m%d%H%M%S%f'))
-    led.show(["testi"], (255,0,0), (0,0,0))
+    led.show([groupID], (255,0,0), (0,0,0))
+    print(groupID)
     if request.method == 'POST':
         #tf = '%H:%M:%S'
         if 'late' in request.POST:
@@ -33,32 +38,24 @@ def home(request):
             timer = Timer(savedTime = datetime.utcnow().strftime(tf), currentOverTime = overtime, id='0')
             print(datetime.utcnow().strftime(tf))
             timer.save()
-            '''
-        if 'arrived' in request.POST:
-            timer = Timer.objects.get(id='0')
-            oldTime = timer.savedTime
-            oldTimeD = datetime.strptime(oldTime, tf)
-            overtime = datetime.utcnow() - oldTimeD
-            overtime = int(overtime.total_seconds()/60)
-            timer = Timer(savedTime = timer.savedTime, currentOverTime = overtime , id='0')
+        if 'stop' in request.POST:
+            timer = Timer(savedTime = 'empty', currentOverTime = 0, id='0')
+            print("empty now")
             timer.save()
-            '''
-
-    '''
-    timer = Timer.objects.get(id='0')
-    oldTime = datetime.strptime(timer.savedTime, tf)
-    overtime = datetime.utcnow() - oldTime
-    overtime = int(overtime.total_seconds()/60)
-    print(overtime)
-    '''
+            
     timer = Timer.objects.get(id='0')
     overtime = timer.currentOverTime
     keepDateTime = timer.savedTime
-    timer = Timer(savedTime = keepDateTime, currentOverTime = overtime , id='0')
-    timer.save()
-    keepDateTime = datetime.strptime(keepDateTime, tf)
-    overtime = datetime.utcnow() - keepDateTime
-    overtime = int(overtime.total_seconds()/60)
+    if keepDateTime != 'empty':
+        print(keepDateTime)
+        timer = Timer(savedTime = keepDateTime, currentOverTime = overtime , id='0')
+        timer.save()
+        keepDateTime = datetime.strptime(keepDateTime, tf)
+        overtime = datetime.utcnow() - keepDateTime
+        overtime = int(overtime.total_seconds()/60)
+    else:
+        overtime = 0
+        print("empty")
 
     #led = Led()
     return render(request, 'home.html',{'dests': dests, 'overtime':overtime, 'currentTime':currentTime})
@@ -112,43 +109,6 @@ def addDestination(request):
 
     return render(request, 'addDestination.html',{'subjects': subjects, 'routes': routes})
 
-    
-
-    '''
-    dests = Destination.objects.all()
-
-    if request.method == 'POST':
-
-        if 'add_items' in request.POST:
-
-            print("ifiss")
-            destination = request.POST['destination']
-            arrive_time = request.POST['arrive_time']
-    
-
-            des = Destination(destination = destination, arrive_time = arrive_time)
-            des.save()
-            print('destination created')
-
-            return render(request, 'addDestination.html',{'dests': dests})
-
-        if 'delete_items' in request.POST:
-
-            # Fetch list of items to delete, by ID
-            items_to_delete = request.POST.getlist('delete_items')
-            print("items to delete")
-            print(items_to_delete)
-            # Delete those items all in one go
-            Destination.objects.filter(pk__in=items_to_delete).delete()
-
-            return render(request, 'addDestination.html',{'dests': dests})
-
-        
-    else:
-        print("elses")
-        return render(request, 'addDestination.html',{'dests': dests})
-
-        '''
 def group(request):
 
     group = Group.objects.get(id='1')
