@@ -39,9 +39,9 @@ User will be able to connect to the tour-tag WIFI access point by phone or lapto
 
 ### Hardware
 
-Raspberry Pi 3 Model b
-https://www.raspberrypi.org/
-Unicorn Hat HD Matrix LED
+Raspberry Pi 3 Model b \
+https://www.raspberrypi.org/ \
+Unicorn Hat HD Matrix LED \
 https://github.com/pimoroni/unicorn-hat-hd
 
 <!-- GETTING STARTED -->
