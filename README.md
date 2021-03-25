@@ -6,8 +6,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#software">Built With</a></li>
-        <li><a href="#harware">Built With</a></li>
+        <li><a href="#software">Software</a></li>
+        <li><a href="#harware">Harware</a></li>
       </ul>
     </li>
     <li>
